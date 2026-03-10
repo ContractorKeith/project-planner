@@ -25,7 +25,7 @@ first message. No re-explaining.
 
 > **Using mvp-builder?** Rename the context file to `CONTEXT.md` before dropping it in.
 
-> **Companion template:** [mvp-builder](https://github.com/ContractorKeith/mvp-builder) _(coming soon)_ — picks up where this repo leaves off.
+> **Companion template:** [mvp-builder](https://github.com/ContractorKeith/mvp-builder) — picks up where this repo leaves off.
 
 ---
 
@@ -97,7 +97,7 @@ project-planner  →  outputs/  →  build repo  →  ship
 
 Each repo has one job. This one's job is planning.
 
-> See [mvp-builder](https://github.com/ContractorKeith/mvp-builder) _(coming soon)_ for the next link in the chain.
+> See [mvp-builder](https://github.com/ContractorKeith/mvp-builder) for the next link in the chain.
 
 ---
 
