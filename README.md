@@ -1,5 +1,7 @@
 # project-planner
 
+![project-planner cover](project-planner-cover.png)
+
 A planning-only repo. No code gets written here.
 
 Open it in Claude Code, Codex, or Gemini CLI. Say `/init` or describe what you want to build.
