@@ -1,0 +1,12 @@
+# Generated outputs — gitignore by default.
+# Remove this if you want to commit your planning sessions.
+outputs/*
+!outputs/.gitkeep
+
+# Local tool settings
+.claude/
+
+# Common
+.DS_Store
+.env
+*.log
