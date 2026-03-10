@@ -29,6 +29,19 @@ first message. No re-explaining.
 
 ---
 
+## Getting started
+
+**Option 1 — Use as a GitHub template** (recommended):
+Click the **"Use this template"** button on GitHub to create your own copy.
+
+**Option 2 — Clone directly:**
+```bash
+git clone https://github.com/ContractorKeith/project-planner.git my-project-planner
+cd my-project-planner
+```
+
+---
+
 ## How to use
 
 The orchestrator file is `CLAUDE.md`. Each AI tool reads it automatically:
