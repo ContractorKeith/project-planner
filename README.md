@@ -83,6 +83,7 @@ project-planner/
 │   ├── stack-selection.md     ← defines the technical shape
 │   ├── prd-writing.md        ← generates /outputs/
 │   ├── plan-refiner.md       ← refines an existing plan
+│   ├── plan-eng-review.md    ← engineering stress-test of the plan
 │   ├── phase-gates.md        ← final checklist before handoff (community)
 │   └── multi-model-review.md ← second-model plan review (community)
 │
