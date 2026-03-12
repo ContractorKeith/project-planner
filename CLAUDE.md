@@ -50,6 +50,8 @@ Read a skill file before invoking it.
 | `skills/problem-framing.md` | First. Always. Defines the problem. |
 | `skills/stack-selection.md` | After problem is clear. Defines the solution shape. |
 | `skills/prd-writing.md` | Last. Synthesizes everything into `/outputs/`. |
+| `skills/multi-model-review.md` | After outputs are generated. Send plan to a second model to find gaps. |
+| `skills/phase-gates.md` | Final check before calling planning done. Validates outputs are complete. |
 | `skills/skill-creator.md` | Anytime a new skill is needed mid-session. |
 
 ---
