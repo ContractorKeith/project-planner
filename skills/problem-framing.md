@@ -14,12 +14,13 @@ write a PRD that won't drift.
 
 ## What you're extracting
 
-You need four things. Don't move on until all four are clear:
+You need five things. Don't move on until all five are clear:
 
 1. **The problem** — What is broken, missing, or painful right now?
 2. **Who has it** — Who is the user? (Could be "just me", that's fine.)
-3. **Success criteria** — How will you know when it's solved?
-4. **Out of scope** — What is this explicitly NOT? This one is non-negotiable.
+3. **Core workflow** — What are the 2-3 main steps the user takes to go from problem to solution?
+4. **Success criteria** — How will you know when it's solved?
+5. **Out of scope** — What is this explicitly NOT? This one is non-negotiable.
 
 ---
 
@@ -45,13 +46,18 @@ If their answer is solution-first ("I want to build an app that..."), redirect:
 If they say "just me" — great. That's a valid and important answer. Solo tools have
 different constraints than multi-user products.
 
-**Step 4 — Define success**
+**Step 4 — Define the core workflow**
+> "What are the 2-3 main steps the user takes to go from problem to solution in this app?"
+
+This helps visualize the journey rather than just listing features.
+
+**Step 5 — Define success**
 > "How would you know this is working? What does 'done' look like for you?"
 
 Push for something concrete. "It saves me time" is not a success criterion.
 "I can process a quote in under 5 minutes instead of 30" is.
 
-**Step 5 — Lock out of scope**
+**Step 6 — Lock out of scope**
 This is the most important and most skipped question:
 > "What is this specifically NOT trying to do? What should we leave out?"
 
@@ -65,6 +71,7 @@ add that you'd actually want removed?"
 Summarize back to the user in 3-5 sentences:
 - The problem in one sentence
 - Who has it
+- The 2-3 step core workflow
 - What success looks like
 - What's out of scope
 
@@ -81,6 +88,7 @@ Store these answers in the session. The prd-writing skill will pull from them.
 ```
 PROBLEM_STATEMENT: [one sentence]
 USER: [who]
+CORE_WORKFLOW: [2-3 main steps]
 SUCCESS_CRITERIA: [concrete, measurable if possible]
 OUT_OF_SCOPE: [explicit list]
 CONTEXT: [anything else relevant — existing tools, constraints, backstory]

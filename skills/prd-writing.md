@@ -134,9 +134,12 @@ in the first sprint, the tasks are too big.
 
 ---
 
-## Sprint 1 — Foundation
+## Sprint 1 — Foundation (Walking Skeleton)
+
+Keep Sprint 1 focused on a "Walking Skeleton" — build an end-to-end connected system with bare-minimum functionality (e.g., UI → API → Database connected and returning "hello world" or mocked data) before adding any real features.
 
 - [ ] [Task: set up repo, initialize project, confirm it runs]
+- [ ] [Task: build the walking skeleton (e.g. wire up minimal UI, routing, and database for an end-to-end slice)]
 - [ ] [Task: first real feature, smallest useful slice]
 - [ ] [Task: ...]
 

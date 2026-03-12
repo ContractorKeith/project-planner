@@ -45,14 +45,7 @@ Ask **one question at a time**. Never present a form. Never list 10 questions at
 
 Read a skill file before invoking it.
 
-| Skill | When to use |
-|---|---|
-| `skills/problem-framing.md` | First. Always. Defines the problem. |
-| `skills/stack-selection.md` | After problem is clear. Defines the solution shape. |
-| `skills/prd-writing.md` | Last. Synthesizes everything into `/outputs/`. |
-| `skills/multi-model-review.md` | After outputs are generated. Send plan to a second model to find gaps. |
-| `skills/phase-gates.md` | Final check before calling planning done. Validates outputs are complete. |
-| `skills/skill-creator.md` | Anytime a new skill is needed mid-session. |
+**Dynamic Discovery:** Always read the contents of the `/skills/` directory on initialization to discover all available skills by reading their YAML frontmatter descriptions. Do not rely on a hardcoded list, as new skills may have been dynamically created in previous sessions.
 
 ---
 

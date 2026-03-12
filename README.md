@@ -46,13 +46,14 @@ cd my-project-planner
 
 ## How to use
 
-The orchestrator file is `CLAUDE.md`. Each AI tool reads it automatically:
+The core logic is stored in `skills/orchestrator.md`. But you don't need to do anything manually because we provide proxy files out of the box for the most common tools. Each AI tool will read its respective proxy file automatically:
 
 | Tool | Setup |
 |---|---|
 | Claude Code | Works out of the box — reads `CLAUDE.md` automatically |
-| OpenAI Codex | Copy or rename `CLAUDE.md` to `AGENTS.md` |
-| Gemini CLI | Copy or rename `CLAUDE.md` to `GEMINI.md` |
+| OpenAI Codex | Works out of the box — reads `AGENTS.md` automatically |
+| Gemini CLI | Works out of the box — reads `GEMINI.md` automatically |
+| Cursor / Windsurf | Works out of the box — governed by `.cursorrules` / `.windsurfrules` |
 
 **Start a session:**
 ```
@@ -66,16 +67,22 @@ Or just describe what you want to build. The orchestrator will take it from ther
 
 ```
 project-planner/
-├── CLAUDE.md              ← orchestrator
+├── .cursorrules           ← IDE instructions for Cursor
+├── .windsurfrules         ← IDE instructions for Windsurf
+├── CLAUDE.md              ← proxy to orchestrator
+├── GEMINI.md              ← proxy to orchestrator
+├── AGENTS.md              ← proxy to orchestrator
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
 │
 ├── skills/
+│   ├── orchestrator.md    ← core orchestrator logic
 │   ├── skill-creator.md   ← create new skills mid-session
 │   ├── problem-framing.md ← extracts the problem
 │   ├── stack-selection.md ← defines the technical shape
-│   └── prd-writing.md     ← generates /outputs/
+│   ├── prd-writing.md     ← generates /outputs/
+│   └── plan-refiner.md    ← refines an existing plan
 │
 ├── examples/              ← sample outputs from a fictional project
 │   ├── README.md
