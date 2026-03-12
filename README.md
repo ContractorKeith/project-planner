@@ -77,12 +77,14 @@ project-planner/
 ├── CONTRIBUTING.md
 │
 ├── skills/
-│   ├── orchestrator.md    ← core orchestrator logic
-│   ├── skill-creator.md   ← create new skills mid-session
-│   ├── problem-framing.md ← extracts the problem
-│   ├── stack-selection.md ← defines the technical shape
-│   ├── prd-writing.md     ← generates /outputs/
-│   └── plan-refiner.md    ← refines an existing plan
+│   ├── orchestrator.md       ← core orchestrator logic
+│   ├── skill-creator.md      ← create new skills mid-session
+│   ├── problem-framing.md    ← extracts the problem
+│   ├── stack-selection.md     ← defines the technical shape
+│   ├── prd-writing.md        ← generates /outputs/
+│   ├── plan-refiner.md       ← refines an existing plan
+│   ├── phase-gates.md        ← final checklist before handoff (community)
+│   └── multi-model-review.md ← second-model plan review (community)
 │
 ├── examples/              ← sample outputs from a fictional project
 │   ├── README.md

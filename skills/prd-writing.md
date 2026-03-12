@@ -205,7 +205,7 @@ Planning complete. Ready to build. See PRD.md and TASKS.md for details.
 ## After generating outputs
 
 1. Tell the user all four files are in `/outputs/`.
-2. Update Session State in `CLAUDE.md` (root):
+2. Update Session State in `skills/orchestrator.md`:
    - Problem locked: yes
    - Stack locked: yes
    - Outputs generated: yes

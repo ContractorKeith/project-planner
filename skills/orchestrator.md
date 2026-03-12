@@ -35,7 +35,9 @@ When the user opens this repo or says `/init`:
 4. Follow the problem-framing skill until the problem is fully understood.
 5. When problem is locked, shift to stack-selection skill.
 6. When both are done, run prd-writing skill to generate `/outputs/`.
-7. Update the `## Session State` section at the bottom of this file.
+7. Run phase-gates skill to validate the outputs before calling planning done.
+8. Offer the user a multi-model-review — a second model (or fresh session) reviewing the plan for gaps. Not required, but recommended.
+9. Update the `## Session State` section at the bottom of this file.
 
 Ask **one question at a time**. Never present a form. Never list 10 questions at once.
 
