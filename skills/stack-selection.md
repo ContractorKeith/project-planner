@@ -14,6 +14,7 @@ challenge or accept. By the end, both you and the user know exactly what you're 
 
 ## Prerequisites
 - Problem framing is complete and confirmed by the user.
+- The `.session/state.json` file exists and contains the `problem` data.
 - You know: what it does, who it's for, success criteria, out of scope.
 
 ---
@@ -76,20 +77,29 @@ they haven't mentioned yet.
 
 ## When stack is locked
 
-Summarize the decisions:
+As you finalize the decisions, update `.session/state.json` with a `stack` key.
+The `prd-writing` skill will pull from this file.
 
-```
-ARCHITECTURE: [pattern name]
-LANGUAGE/RUNTIME: [specific version if known]
-KEY DEPENDENCIES: [libraries, frameworks]
-DATA LAYER: [SQLite / Postgres / flat files / none / etc.]
-AGENTS/MCPS: [list or "none"]
-DEPLOYMENT: [local / Cloudflare / VPS / etc.]
-OUT OF SCOPE (tech): [what we're not building]
-RATIONALE: [2-3 sentences on why this shape fits the problem]
+The JSON object should have a `stack` key with the following structure:
+
+```json
+{
+  "problem": { ... },
+  "stack": {
+    "architecture": "[pattern name]",
+    "language_runtime": "[specific version if known]",
+    "key_dependencies": "[libraries, frameworks]",
+    "data_layer": "[SQLite / Postgres / flat files / none / etc.]",
+    "agents_mcps": "[list or 'none']",
+    "deployment": "[local / Cloudflare / VPS / etc.]",
+    "out_of_scope_tech": "[what we're not building]",
+    "rationale": "[2-3 sentences on why this shape fits the problem]"
+  }
+}
 ```
 
-Ask: **"Does this match what you had in mind?"**
+After updating the file, summarize the decisions to the user and ask:
+**"Does this match what you had in mind?"**
 
 Don't proceed to prd-writing until you get a yes.
 

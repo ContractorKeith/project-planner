@@ -16,14 +16,13 @@ developer — and have them immediately understand what to build and why.
 ## Prerequisites
 - Problem framing confirmed by user
 - Stack selection confirmed by user
-- All four problem fields captured: PROBLEM_STATEMENT, USER, SUCCESS_CRITERIA, OUT_OF_SCOPE
-- All stack fields captured: ARCHITECTURE, LANGUAGE, DEPENDENCIES, DATA_LAYER, DEPLOYMENT
+- The `.session/state.json` file exists and contains both the `problem` and `stack` objects.
 
 ---
 
 ## Output files to generate
 
-Generate all four files. Use the structures below to generate each file.
+Generate all four files based on the contents of `.session/state.json`. Use the structures below to generate each file.
 
 ---
 
@@ -37,19 +36,19 @@ Keep it tight. No fluff. Every section earns its place.
 
 **Status:** Draft  
 **Date:** [today]  
-**Author:** [user name if known, otherwise omit]
+**Author:** [state.problem.user_name if present, otherwise omit]
 
 ---
 
 ## Problem
 
-[PROBLEM_STATEMENT — one clear sentence]
+[state.problem.problem_statement]
 
-[1-2 sentences of context: why this matters, what happens without it]
+[state.problem.context]
 
 ## User
 
-[USER — who this is for and what they care about]
+[state.problem.user]
 
 ## Solution
 
@@ -57,10 +56,7 @@ Keep it tight. No fluff. Every section earns its place.
 
 ## Success Criteria
 
-[Numbered list. Concrete. Measurable where possible.]
-
-1. [criterion]
-2. [criterion]
+[Numbered list from state.problem.success_criteria]
 
 ## Scope
 
@@ -68,7 +64,7 @@ Keep it tight. No fluff. Every section earns its place.
 [Bulleted list of what this project does]
 
 ### Out of Scope
-[Bulleted list of what it explicitly does not do]
+[Bulleted list from state.problem.out_of_scope]
 
 ## Key Decisions
 
@@ -92,34 +88,34 @@ Keep it tight. No fluff. Every section earns its place.
 
 ## Architecture
 
-**Pattern:** [pattern name]  
-**Rationale:** [why this pattern fits the problem]
+**Pattern:** [state.stack.architecture]  
+**Rationale:** [state.stack.rationale]
 
 ## Runtime & Language
 
-[language + version]
+[state.stack.language_runtime]
 
 ## Key Dependencies
 
 | Package | Purpose |
 |---|---|
-| [name] | [why] |
+| [name from state.stack.key_dependencies] | [why] |
 
 ## Data Layer
 
-[SQLite / Postgres / flat files / none — and why]
+[state.stack.data_layer]
 
 ## Agents & MCPs
 
-[List with purpose, or "None — this project does not use AI agents"]
+[state.stack.agents_mcps]
 
 ## Deployment
 
-[Where and how it runs]
+[state.stack.deployment]
 
 ## What We're NOT Using
 
-[Anything explicitly ruled out, with a brief reason]
+[state.stack.out_of_scope_tech]
 ```
 
 ---
@@ -172,17 +168,17 @@ and gives the AI full context immediately.
 # [Project Name]
 
 ## What this is
-[PROBLEM_STATEMENT]. [One sentence on the solution approach.]
+[state.problem.problem_statement]. [One sentence on the solution approach.]
 
 ## User
-[USER]
+[state.problem.user]
 
 ## Stack
-- **Language:** [runtime + version]
-- **Architecture:** [pattern]
-- **Data:** [data layer]
-- **Key deps:** [list]
-- **Deploy:** [target]
+- **Language:** [state.stack.language_runtime]
+- **Architecture:** [state.stack.architecture]
+- **Data:** [state.stack.data_layer]
+- **Key deps:** [state.stack.key_dependencies]
+- **Deploy:** [state.stack.deployment]
 
 ## Structure
 [Fill in once repo is scaffolded — leave as placeholder for now]
@@ -191,13 +187,13 @@ and gives the AI full context immediately.
 [Fill in as conventions emerge — leave as placeholder for now]
 
 ## Do NOT
-[Anything explicitly out of scope from the PRD]
+[state.problem.out_of_scope]
 
 ## Current State
 Planning complete. Ready to build. See PRD.md and TASKS.md for details.
 
 ## Success Criteria
-[Copy from PRD]
+[state.problem.success_criteria]
 ```
 
 ---
@@ -205,12 +201,8 @@ Planning complete. Ready to build. See PRD.md and TASKS.md for details.
 ## After generating outputs
 
 1. Tell the user all four files are in `/outputs/`.
-2. Update Session State in `skills/orchestrator.md`:
-   - Problem locked: yes
-   - Stack locked: yes
-   - Outputs generated: yes
-   - Project name: [name]
-3. Say: **"Your planning docs are in `/outputs/`. Drop that folder into your next repo and you're ready to build."**
+2. Say: **"Your planning docs are in `/outputs/`. Drop that folder into your next repo and you're ready to build."**
+3. Delete the `.session/state.json` file to clean up the session.
 
 ---
 

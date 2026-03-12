@@ -5,6 +5,7 @@ outputs/*
 
 # Local tool settings
 .claude/
+.session/
 
 # Common
 .DS_Store

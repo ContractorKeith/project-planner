@@ -26,19 +26,19 @@ When planning is complete, say:
 
 When the user opens this repo or says `/init`:
 
-1. Check `/outputs/` for existing files. If outputs exist, read them and ask:
+1. Check `/.session/state.json` for existing session data. If it exists, load it.
+2. Check `/outputs/` for existing files. If outputs exist, read them and ask:
    **"I see an existing plan for [project name]. Do you want to continue refining it, or start fresh?"**
-   If continuing, use the existing outputs as context for the session.
-   If starting fresh, clear `/outputs/` and reset Session State before proceeding.
-2. Greet them in 2 sentences: what this repo does and what they'll walk away with.
-3. Ask: **"What are you trying to build or solve?"**
-4. Follow the problem-framing skill until the problem is fully understood.
-5. When problem is locked, shift to stack-selection skill.
-6. When both are done, run prd-writing skill to generate `/outputs/`.
-7. Offer the user a plan-eng-review — an engineering stress-test of the plan's architecture, test strategy, performance, and failure modes. Not required, but recommended for complex projects.
-8. Run phase-gates skill to validate the outputs before calling planning done.
-9. Offer the user a multi-model-review — a second model (or fresh session) reviewing the plan for gaps. Not required, but recommended.
-10. Update the `## Session State` section at the bottom of this file.
+   If continuing, use the existing outputs and session data as context.
+   If starting fresh, move the contents of `/outputs/` to `/outputs_backup_YYYY-MM-DD_HH-MM-SS/` and delete `.session/state.json` before proceeding.
+3. Greet them in 2 sentences: what this repo does and what they'll walk away with.
+4. Ask: **"What are you trying to build or solve?"**
+5. Follow the problem-framing skill until the problem is fully understood. All captured data should be saved to `.session/state.json`.
+6. When problem is locked, shift to stack-selection skill. All captured data should be saved to `.session/state.json`.
+7. When both are done, run prd-writing skill to generate `/outputs/` using the data from `.session/state.json`.
+8. Offer the user a plan-eng-review — an engineering stress-test of the plan's architecture, test strategy, performance, and failure modes. Not required, but recommended for complex projects.
+9. Run phase-gates skill to validate the outputs before calling planning done.
+10. Offer the user a multi-model-review — a second model (or fresh session) reviewing the plan for gaps. Not required, but recommended.
 
 Ask **one question at a time**. Never present a form. Never list 10 questions at once.
 
@@ -49,6 +49,14 @@ Ask **one question at a time**. Never present a form. Never list 10 questions at
 Read a skill file before invoking it.
 
 **Dynamic Discovery:** Always read the contents of the `/skills/` directory on initialization to discover all available skills by reading their YAML frontmatter descriptions. Do not rely on a hardcoded list, as new skills may have been dynamically created in previous sessions.
+
+---
+
+## Session Management
+
+All state for the current planning session is stored in `.session/state.json`.
+This file is created at the start of a session and is read from and written to by the various skills.
+It should not be committed to the repository and is ignored by `.gitignore`.
 
 ---
 
@@ -84,15 +92,3 @@ outputs/
 ├── TASKS.md      ← first sprint
 └── [TOOL].md     ← context file (CLAUDE.md, AGENTS.md, or GEMINI.md depending on tool)
 ```
-
----
-
-## Session State
-
-> Update this section as the session progresses.
-
-- **Project name:** —
-- **Problem locked:** no
-- **Stack locked:** no
-- **Outputs generated:** no
-- **Notes:** —

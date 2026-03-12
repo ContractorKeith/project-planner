@@ -14,13 +14,14 @@ write a PRD that won't drift.
 
 ## What you're extracting
 
-You need five things. Don't move on until all five are clear:
+You need six things. Don't move on until all six are clear:
 
 1. **The problem** — What is broken, missing, or painful right now?
 2. **Who has it** — Who is the user? (Could be "just me", that's fine.)
 3. **Core workflow** — What are the 2-3 main steps the user takes to go from problem to solution?
 4. **Success criteria** — How will you know when it's solved?
 5. **Out of scope** — What is this explicitly NOT? This one is non-negotiable.
+6. **Your name (optional)** — For the author field in the PRD.
 
 ---
 
@@ -64,6 +65,9 @@ This is the most important and most skipped question:
 If they struggle to answer, prompt: "What's something a well-meaning developer might
 add that you'd actually want removed?"
 
+**Step 7 — Get user's name (optional)**
+> "What is your name? (This will be used in the author field of the PRD. You can skip this if you'd like.)"
+
 ---
 
 ## When the problem is locked
@@ -83,15 +87,23 @@ Do not proceed to stack-selection until you get a yes.
 
 ## What to capture (for prd-writing skill later)
 
-Store these answers in the session. The prd-writing skill will pull from them.
+As you collect the answers to these questions, save them to `.session/state.json`.
+The `prd-writing` skill will pull from this file.
 
-```
-PROBLEM_STATEMENT: [one sentence]
-USER: [who]
-CORE_WORKFLOW: [2-3 main steps]
-SUCCESS_CRITERIA: [concrete, measurable if possible]
-OUT_OF_SCOPE: [explicit list]
-CONTEXT: [anything else relevant — existing tools, constraints, backstory]
+The JSON object should have a `problem` key with the following structure:
+
+```json
+{
+  "problem": {
+    "problem_statement": "[one sentence]",
+    "user": "[who]",
+    "core_workflow": "[2-3 main steps]",
+    "success_criteria": "[concrete, measurable if possible]",
+    "out_of_scope": "[explicit list]",
+    "context": "[anything else relevant — existing tools, constraints, backstory]",
+    "user_name": "[user's name, or null]"
+  }
+}
 ```
 
 ---
